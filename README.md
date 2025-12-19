@@ -1,6 +1,6 @@
 # SimplyFellas
 
-A React-based website for the SimplyFellas Minecraft 1.21.1 Vanilla+ modpack.
+A React-based website for the SimplyFellas Minecraft 1.21.1 Vanilla+ modpack!
 
 ## About
 
