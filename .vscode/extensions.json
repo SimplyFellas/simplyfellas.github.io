@@ -1,0 +1,31 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		// Icons for the workspace
+		"vscode-icons-team.vscode-icons",
+		// React JS snippets for better code completion
+		"dsznajder.es7-react-js-snippets",
+		// ESLint for JavaScript and TypeScript
+		"dbaeumer.vscode-eslint",
+		// Markdown linting and markdown Intellisense for better code quality
+		"davidanson.vscode-markdownlint",
+		"yzhang.markdown-all-in-one",
+		// Path Intellisense and npm Intellisense for better code navigation and completion
+		"christian-kohler.path-intellisense",
+		"christian-kohler.npm-intellisense",
+		// Error lens for better error highlighting
+		"usernamehw.errorlens",
+		// Emojisense for better emoji completion
+		"bierner.emojisense",
+		// Indentation rainbow for better code readability
+		"oderwat.indent-rainbow",
+		// Output colorizer for better console output
+		"ibm.output-colorizer",
+		// Better comments for better code readability
+		"aaron-bond.better-comments",
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": []
+}
