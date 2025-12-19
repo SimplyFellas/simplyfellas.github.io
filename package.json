@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://SimplyFellas.github.io/",
+  "homepage": "https://simplyfellas.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

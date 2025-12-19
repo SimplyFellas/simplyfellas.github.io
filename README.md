@@ -28,7 +28,7 @@ This project is built with:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/UncleTyrone/SimplyFellas.git
+   git clone https://github.com/SimplyFellas/simplyfellas.github.io.git
    cd SimplyFellas
    ```
 
