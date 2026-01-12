@@ -1,42 +1,78 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+    --pri-color-1: #f0f0f0;
+    --pri-color-2: #f0f0f0;
+
+    --sec-color-1: #151515;
+    --sec-color-2: #252525;
+
+    --accent-color-1: #ffbb00;
+    --accent-color-2: #d98600;
+
+    --font-poppins: "Poppins", sans-serif;
+    --font-inter: "Inter", sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html {
+    background: linear-gradient(var(--sec-color-2), var(--sec-color-1));
+    background-color: var(--sec-color-1);
+    height: 100dvh;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--pri-color-1);
+
+    background: linear-gradient(var(--sec-color-1), var(--sec-color-2));
+
+    filter: drop-shadow(0 -0.1rem 0.05rem var(--pri-color-1));
+
+    border: 1px solid var(--pri-color-1);
+    border-bottom: 0;
+    border-radius: 1rem;
+    padding: 8px;
+
+    & span {
+        font-family: var(--font-poppins);
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body {
+    padding: 16px;
+    margin: 0;
 }
 
-.card {
-  padding: 2em;
+a {
 }
 
-.read-the-docs {
-  color: #888;
+/* --- CLASS --- */
+
+.justify-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+/* --- ID --- */
+
+#modpackLogo {
+    width: 32px;
+    height: 32px;
+}
+
+#headingNav {
+    & ul {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        list-style: none;
+
+        font-family: var(--font-poppins);
+    }
 }

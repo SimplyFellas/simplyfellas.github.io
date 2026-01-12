@@ -5,12 +5,13 @@
   "type": "module",
   "homepage": "https://simplyfellas.github.io/",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "motion": "^12.26.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
