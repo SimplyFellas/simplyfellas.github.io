@@ -4,7 +4,7 @@ export let containerAnimation = {
   show: {
     opacity: 1,
     transition: {
-      delayChildren: stagger(0.5),
+      delayChildren: stagger(0.25),
     },
   },
   hide: {

@@ -3,10 +3,11 @@ import {
   containerAnimation,
   itemAnimation,
 } from "../variables/motionVariables";
+import { Link } from "react-router";
 
 export default function NavHeader() {
   return (
-    <motion.div>
+    <motion.div id="stickyNavWrapper">
       <motion.header>
         <motion.div
           className="justify-row"
@@ -28,10 +29,24 @@ export default function NavHeader() {
             initial="hide"
             animate="show"
           >
-            <motion.li variants={itemAnimation}>Download</motion.li>
-            <motion.li variants={itemAnimation}>FAQ</motion.li>
-            <motion.li variants={itemAnimation}>Discord</motion.li>
-            <motion.li variants={itemAnimation}>Github</motion.li>
+            <motion.li variants={itemAnimation}>
+              <Link to={"/Downloads"}>
+                <img className="navLink_icon" src="/assets/download.svg"></img>
+                <span>Download</span>
+              </Link>
+            </motion.li>
+            <motion.li variants={itemAnimation}>
+              <img className="navLink_icon" src="/assets/faq.svg"></img>
+              <span>FAQ</span>
+            </motion.li>
+            <motion.li variants={itemAnimation}>
+              <img className="navLink_icon" src="/assets/discord.svg"></img>
+              <span>Discord</span>
+            </motion.li>
+            <motion.li variants={itemAnimation}>
+              <img className="navLink_icon" src="/assets/github.svg"></img>
+              <span>Github</span>
+            </motion.li>
           </motion.ul>
         </motion.nav>
       </motion.header>

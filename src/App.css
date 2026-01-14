@@ -10,10 +10,12 @@
 
     --font-poppins: "Poppins", sans-serif;
     --font-inter: "Inter", sans-serif;
+
+    font-family: var(--font-poppins);
 }
 
 html {
-    background: linear-gradient(var(--sec-color-2), var(--sec-color-1));
+    /*background: linear-gradient(var(--sec-color-2), var(--sec-color-1));*/
     background-color: var(--sec-color-1);
     height: 100dvh;
     background-size: cover;
@@ -21,19 +23,23 @@ html {
 }
 
 header {
+    height: 48px;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     color: var(--pri-color-1);
 
-    background: linear-gradient(var(--sec-color-1), var(--sec-color-2));
+    /*background: linear-gradient(var(--sec-color-1), var(--sec-color-2));*/
 
-    filter: drop-shadow(0 -0.1rem 0.05rem var(--pri-color-1));
+    background: linear-gradient(to top, transparent, #151515ff);
 
-    border: 1px solid var(--pri-color-1);
+    /*filter: drop-shadow(0 -0.1rem 0.05rem var(--pri-color-1));*/
+
+    /*border: 1px solid var(--pri-color-1);
     border-bottom: 0;
-    border-radius: 1rem;
+    border-radius: 1rem;*/
     padding: 8px;
 
     & span {
@@ -41,24 +47,201 @@ header {
     }
 }
 
+a {
+    color: var(--pri-color-1);
+    text-decoration: none;
+}
+
 body {
-    padding: 16px;
+    padding: 0px;
     margin: 0;
 }
 
-a {
+footer {
+    margin-block: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* --- CLASS --- */
+
+.navLink_icon {
+    --IconSize: 24px;
+    padding-inline: 8px;
+    width: var(--IconSize);
+    height: var(--IconSize);
+}
 
 .justify-row {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
+}
+
+.gradient1-toLeft {
+    background: linear-gradient(
+        to left,
+        var(--accent-color-2),
+        var(--accent-color-1)
+    );
+}
+.gradient1-toRight {
+    background: linear-gradient(
+        to right,
+        var(--accent-color-2),
+        var(--accent-color-1)
+    );
+}
+
+.buttonShape {
+    background-color: var(--accent-color-1);
+    padding: 16px;
+    border: 0px solid transparent;
+    border-radius: 1rem;
+}
+
+.pri-c-1 {
+    color: var(--pri-color-1);
+}
+.pri-c-2 {
+    color: var(--pri-color-2);
+}
+.sec-c-1 {
+    color: var(--sec-color-1);
+}
+.sec-c-2 {
+    color: var(--sec-color-2);
+}
+
+.text_bolder {
+    font-weight: 2000;
 }
 
 /* --- ID --- */
+
+#footerContent {
+    gap: 16px;
+
+    & img {
+        height: 32px;
+        width: 32px;
+    }
+
+    & #footerLinks {
+        color: var(--pri-color-1);
+
+        justify-content: space-evenly;
+        width: 100%;
+    }
+}
+
+#goBackBar {
+    height: 64px;
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, #151515ff);
+}
+
+#stickyNavWrapper {
+    top: 0px;
+    position: sticky;
+}
+
+#wabbanodeLink {
+    & a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+
+        width: fit-content;
+        & img {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+#downloadButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    & img {
+        height: 16px;
+        aspect-ratio: 1/1;
+    }
+    & a {
+        color: var(--pri-color-1);
+        text-decoration: none;
+    }
+}
+
+#heroContent {
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    background:
+        radial-gradient(#252525aa, #151515ff),
+        url("/assets/websiteImages/NetherFortress.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    & section {
+        & h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: var(--pri-color-1);
+            margin: 0;
+            padding: 0;
+        }
+
+        & h1 {
+            font-size: 3rem;
+        }
+    }
+
+    & #leftSide {
+        margin-block: 64px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+
+        & p {
+            color: var(--pri-color-1);
+        }
+    }
+
+    & #rightSide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+
+        & img {
+            width: 100%;
+            max-width: 540px;
+            border-radius: 1rem;
+            border: 0px solid transparent;
+        }
+    }
+}
 
 #modpackLogo {
     width: 32px;
@@ -67,12 +250,63 @@ a {
 
 #headingNav {
     & ul {
-        display: flex;
+        margin: 0;
+        display: none;
         flex-direction: row;
         gap: 16px;
 
         list-style: none;
 
         font-family: var(--font-poppins);
+
+        & li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & .navLink_icon {
+                opacity: 0.1;
+                transform: scale(0.9) translate(16px, 0px);
+                transition-property: opacity, transform;
+                transition-duration: 0.25s;
+                transition-timing-function: ease-in-out;
+            }
+
+            &:hover {
+                & .navLink_icon {
+                    opacity: 1;
+                    transform: scale(1) translate(0px, 0px);
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries */
+
+/* tablet screen */
+@media screen and (min-width: 768px) {
+    #headingNav {
+        & ul {
+            display: flex;
+        }
+    }
+
+    #heroContent {
+        flex-direction: row;
+        height: fit-content;
+        padding-inline: 128px;
+
+        & section {
+            height: 720px;
+            width: 50%;
+        }
+
+        & #leftSide {
+            margin-block: 0;
+        }
+        & #rightSide {
+            margin-block: 0;
+        }
     }
 }
