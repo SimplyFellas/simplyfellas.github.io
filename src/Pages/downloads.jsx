@@ -1,3 +1,5 @@
+import ".//downloads.css";
+
 export default function Downloads() {
   return (
     <>

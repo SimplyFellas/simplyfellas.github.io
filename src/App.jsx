@@ -1,6 +1,7 @@
 import { motion, spring, stagger } from "motion/react";
 import NavHeader from "./components/navHeader";
 import { Link } from "react-router";
+import ".//App.css";
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
             id="downloadButton"
             className="buttonShape gradient1-toRight"
           >
-            <img src="/assets/download.svg"></img>
-            <span className="text-bolder">Download!</span>
+            <img src="/assets/arrow.svg"></img>
+            <span className="text-bolder sec-c-1">Download!</span>
           </Link>
           <div id="wabbanodeLink">
             <a
@@ -30,8 +31,8 @@ function App() {
               target="_blank"
               className="buttonShape gradient1-toRight"
             >
-              <img src="/assets/redirect.svg"></img>
-              <span className="text-bolder">Need a Server?</span>
+              <img src="/assets/arrow.svg" className="rot-225"></img>
+              <span className="text-bolder sec-c-1">Need a Server?</span>
             </a>
           </div>
         </section>

@@ -12,6 +12,8 @@
     --font-inter: "Inter", sans-serif;
 
     font-family: var(--font-poppins);
+
+    --cutoffSize: 960px;
 }
 
 html {
@@ -55,6 +57,14 @@ a {
 body {
     padding: 0px;
     margin: 0;
+
+    background:
+        radial-gradient(#252525aa, #151515ff),
+        url("/assets/websiteImages/NetherFortress.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 footer {
@@ -117,14 +127,23 @@ footer {
     color: var(--sec-color-2);
 }
 
-.text_bolder {
-    font-weight: 2000;
+.text-bolder {
+    font-weight: bolder;
+}
+
+.rot-45 {
+    transform: rotate(45deg);
+}
+.rot-225 {
+    transform: rotate(225deg);
 }
 
 /* --- ID --- */
 
 #footerContent {
     gap: 16px;
+    margin-inline: auto;
+    max-width: var(--cutoffSize);
 
     & img {
         height: 32px;
@@ -187,17 +206,11 @@ footer {
 #heroContent {
     padding: 8px;
 
+    max-width: var(--cutoffSize);
+
     display: flex;
     flex-direction: column;
     gap: 8px;
-
-    background:
-        radial-gradient(#252525aa, #151515ff),
-        url("/assets/websiteImages/NetherFortress.png");
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 
     & section {
         & h1,
@@ -253,7 +266,7 @@ footer {
         margin: 0;
         display: none;
         flex-direction: row;
-        gap: 16px;
+        gap: 8px;
 
         list-style: none;
 
@@ -263,6 +276,12 @@ footer {
             display: flex;
             flex-direction: row;
             align-items: center;
+
+            & a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
 
             & .navLink_icon {
                 opacity: 0.1;
@@ -295,7 +314,7 @@ footer {
     #heroContent {
         flex-direction: row;
         height: fit-content;
-        padding-inline: 128px;
+        margin-inline: auto;
 
         & section {
             height: 720px;

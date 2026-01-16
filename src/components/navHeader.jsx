@@ -31,7 +31,7 @@ export default function NavHeader() {
           >
             <motion.li variants={itemAnimation}>
               <Link to={"/Downloads"}>
-                <img className="navLink_icon" src="/assets/download.svg"></img>
+                <img className="navLink_icon" src="/assets/arrow.svg"></img>
                 <span>Download</span>
               </Link>
             </motion.li>
