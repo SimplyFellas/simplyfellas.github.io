@@ -309,7 +309,7 @@ footer {
 /* wrappers */
 
 #wrapper_downloads {
-    background-color: var(--accent-color-2);
+    background-color: var(--sec-color-1);
     height: 1080px;
 }
 
