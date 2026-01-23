@@ -5,7 +5,7 @@ import {
 } from "../variables/motionVariables";
 import { Link } from "react-router";
 
-export default function NavHeader() {
+export default function NavHeader({ disabledButton }) {
   return (
     <motion.div id="stickyNavWrapper">
       <motion.header>
@@ -29,24 +29,35 @@ export default function NavHeader() {
             initial="hide"
             animate="show"
           >
-            <motion.li variants={itemAnimation}>
+
+            <motion.li variants={itemAnimation} aria-disabled>
               <Link to={"/Downloads"}>
                 <img className="navLink_icon" src="/assets/arrow.svg"></img>
                 <span>Download</span>
               </Link>
             </motion.li>
+
             <motion.li variants={itemAnimation}>
-              <img className="navLink_icon" src="/assets/faq.svg"></img>
-              <span>FAQ</span>
+              <a href="https://github.com/SimplyFellas/SimplyFellasWiki" target="blank">
+                <img className="navLink_icon" src="/assets/faq.svg"></img>
+                <span>FAQ</span>
+              </a>
             </motion.li>
+
             <motion.li variants={itemAnimation}>
-              <img className="navLink_icon" src="/assets/discord.svg"></img>
-              <span>Discord</span>
+              <a href="https://discord.gg/kycqpz8z4q" target="_blank">
+                <img className="navLink_icon" src="/assets/discord.svg"></img>
+                <span>Discord</span>
+              </a>
             </motion.li>
+
             <motion.li variants={itemAnimation}>
-              <img className="navLink_icon" src="/assets/github.svg"></img>
-              <span>Github</span>
+              <a href="https://github.com/SimplyFellas" target="_blank">
+                <img className="navLink_icon" src="/assets/github.svg"></img>
+                <span>Github</span>
+              </a>
             </motion.li>
+
           </motion.ul>
         </motion.nav>
       </motion.header>

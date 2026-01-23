@@ -4,14 +4,14 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router";
 import { Route } from "react-router";
 import { Routes } from "react-router";
-import Downloads from "./Pages/downloads.jsx";
+import Downloads from "./pages/downloads.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route index element={<App />}></Route>
-        <Route path="/Downloads" element={<Downloads />}></Route>
+        <Route path="/downloads" element={<Downloads />}></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>,

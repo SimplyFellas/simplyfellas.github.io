@@ -13,7 +13,6 @@
 
     font-family: var(--font-poppins);
 
-    --cutoffSize: 960px;
 }
 
 html {
@@ -57,14 +56,6 @@ a {
 body {
     padding: 0px;
     margin: 0;
-
-    background:
-        radial-gradient(#252525aa, #151515ff),
-        url("/assets/websiteImages/NetherFortress.png");
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 footer {
@@ -78,17 +69,27 @@ footer {
 
 /* --- CLASS --- */
 
-.navLink_icon {
-    --IconSize: 24px;
-    padding-inline: 8px;
-    width: var(--IconSize);
-    height: var(--IconSize);
+.background-hero {
+    background:
+        radial-gradient(#252525aa, #151515ff),
+        url("/assets/websiteImages/NetherFortress.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .justify-row {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 8px;
+}
+
+.justify-col{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     gap: 8px;
 }
 
@@ -138,6 +139,14 @@ footer {
     transform: rotate(225deg);
 }
 
+.footerLinkHeader{
+    color: var(--accent-color-1);
+}
+
+.footerLink{
+    font-size: .5rem;
+}
+
 /* --- ID --- */
 
 #footerContent {
@@ -152,6 +161,10 @@ footer {
 
     & #footerLinks {
         color: var(--pri-color-1);
+
+        display: flex;
+        flex-direction: row;
+        align-items: start;
 
         justify-content: space-evenly;
         width: 100%;
@@ -171,17 +184,18 @@ footer {
 }
 
 #wabbanodeLink {
-    & a {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
 
-        width: fit-content;
-        & img {
-            height: 16px;
-            width: 16px;
-        }
+    margin: 8px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+    & img {
+        height: 16px;
+        width: 16px;
     }
 }
 
@@ -205,8 +219,6 @@ footer {
 
 #heroContent {
     padding: 8px;
-
-    max-width: var(--cutoffSize);
 
     display: flex;
     flex-direction: column;
@@ -234,10 +246,12 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 16px;
 
         & p {
             color: var(--pri-color-1);
+            max-width: 360px;
         }
     }
 
@@ -245,7 +259,7 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: end;
+        align-items: center;
 
         & img {
             width: 100%;
@@ -273,48 +287,64 @@ footer {
         font-family: var(--font-poppins);
 
         & li {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
             & a {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-            }
 
-            & .navLink_icon {
-                opacity: 0.1;
-                transform: scale(0.9) translate(16px, 0px);
-                transition-property: opacity, transform;
-                transition-duration: 0.25s;
-                transition-timing-function: ease-in-out;
-            }
-
-            &:hover {
-                & .navLink_icon {
-                    opacity: 1;
-                    transform: scale(1) translate(0px, 0px);
+                & span{
+                    font-size: .75rem;
+                }
+                & .navLink_icon{
+                    --IconSize: 12px;
+                    padding-inline: 8px;
+                    width: var(--IconSize);
+                    height: var(--IconSize);
                 }
             }
         }
     }
 }
 
+/* wrappers */
+
+#wrapper_downloads {
+    background-color: var(--accent-color-2);
+    height: 1080px;
+}
+
 /* Media Queries */
 
 /* tablet screen */
 @media screen and (min-width: 768px) {
+
+    .buttonHover1{
+        border: 0px solid transparent;
+        transition: border .25s;
+
+        &:hover{
+            border: 4px solid var(--pri-color-1);
+        }
+    }
+
     #headingNav {
         & ul {
             display: flex;
         }
     }
 
+    #downloadButton{
+        margin: 8px;
+    }
+
+    #wabbanodeLink{
+        margin: 8px;
+    }
+
     #heroContent {
         flex-direction: row;
         height: fit-content;
-        margin-inline: auto;
+        margin-inline: 16px;
 
         & section {
             height: 720px;
@@ -323,9 +353,23 @@ footer {
 
         & #leftSide {
             margin-block: 0;
+
+            align-items: start;
         }
         & #rightSide {
             margin-block: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 960px){
+    #heroContent{
+
+        max-width: 1080px;
+        margin-inline: auto ;
+
+        & rightSide{
+            align-items: end;
         }
     }
 }
