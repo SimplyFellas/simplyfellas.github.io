@@ -3,10 +3,6 @@ import "./downloads.css";
 import NavHeader from "../components/navHeader";
 
 export default function Downloads() {
-  useEffect(() => {
-    console.log("loaded");
-  }, []);
-
   return (
     <>
       <NavHeader></NavHeader>
