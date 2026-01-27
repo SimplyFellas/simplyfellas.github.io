@@ -8,7 +8,7 @@ function App() {
 
   function MakeLink({ url, text }) {
     return (
-      <a href={url} target="_blank" className="footerLink">{text}</a>
+      <a href={url} target="_blank" className="link-size-1">{text}</a>
     )
   }
 
@@ -68,7 +68,7 @@ function App() {
           <div>
             <span className="footerLinkHeader">Downloads</span>
             <div className="justify-col">
-              <Link to={"/downloads"} className="footerLink">Downloads</Link>
+              <Link to={"/downloads"} className="link-size-1">Downloads</Link>
             </div>
           </div>
           <div>

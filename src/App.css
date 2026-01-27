@@ -1,12 +1,12 @@
 :root {
-    --pri-color-1: #f0f0f0;
-    --pri-color-2: #f0f0f0;
+    --pri-color-1: #0e0e0e;
+    --pri-color-2: #050505;
 
-    --sec-color-1: #151515;
-    --sec-color-2: #252525;
+    --sec-color-1: #f1f1f1;
+    --sec-color-2: #f5f5f5;
 
-    --accent-color-1: #ffbb00;
-    --accent-color-2: #d98600;
+    --accent-color-1:  #32f1ff;
+    --accent-color-2:  #00d8e7;
 
     --font-poppins: "Poppins", sans-serif;
     --font-inter: "Inter", sans-serif;
@@ -34,7 +34,7 @@ header {
 
     /*background: linear-gradient(var(--sec-color-1), var(--sec-color-2));*/
 
-    background: linear-gradient(to top, transparent, #151515ff);
+    background: linear-gradient(to top, transparent, #121212ff);
 
     /*filter: drop-shadow(0 -0.1rem 0.05rem var(--pri-color-1));*/
 
@@ -71,7 +71,7 @@ footer {
 
 .background-hero {
     background:
-        radial-gradient(#252525aa, #151515ff),
+        radial-gradient(#121212aa, #080808ff),
         url("/assets/websiteImages/NetherFortress.png");
 
     background-size: cover;
@@ -152,8 +152,14 @@ footer {
     margin-block: .25rem;
 }
 
-.footerLink{
-    font-size: .5rem;
+.link-size-1{
+    font-size: 12px;
+}
+.link-size-2{
+    font-size:  .75rem;
+}
+.link-size-3{
+    font-size: 1rem;
 }
 
 /* --- ID --- */
@@ -184,7 +190,7 @@ footer {
     height: 64px;
     position: sticky;
     bottom: 0;
-    background: linear-gradient(to bottom, transparent, #151515ff);
+    background: linear-gradient(to bottom, transparent, #121212ff);
 }
 
 #stickyNavWrapper {
@@ -201,7 +207,7 @@ footer {
     align-items: center;
     gap: 8px;
 
-    width: fit-content;
+    min-width: fit-content;
     & img {
         height: 16px;
         width: 16px;
@@ -232,6 +238,13 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 1px;
+    border-right: 1px;
+    border-color: var(--pri-color-1);
+    border-style: solid;
 
     & section {
         & h1,
