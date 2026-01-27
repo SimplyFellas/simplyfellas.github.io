@@ -19,13 +19,13 @@ function App() {
       <motion.main id="heroContent">
         {/* left side*/}
         <section id="leftSide">
-          <h1>SimplyFellas</h1>
+          <h1 className="acc-c-1">SimplyFellas</h1>
           <p>
             A vanilla+ modpack crafted to enhance the Minecraft you already know
             & love!
           </p>
 
-          <div className="justify-row">
+          <div className="justify-row" id="heroLinkWrapper">
 
             <Link
               to={"/downloads"}
@@ -67,21 +67,21 @@ function App() {
         <section id="footerLinks">
           <div>
             <span className="footerLinkHeader">Downloads</span>
-            <div>
+            <div className="justify-col">
               <Link to={"/downloads"} className="footerLink">Downloads</Link>
             </div>
           </div>
           <div>
             <span className="footerLinkHeader">Resources</span>
             <div className="justify-col">
-              <MakeLink url={urls.urls.simplyFellasWiki} text={"Github Wiki!"}/>
+              <MakeLink url={urls.urls.simplyFellasWiki} text={"Github Wiki"}/>
             </div>
 
           </div>
           <div>
             <span className="footerLinkHeader">Socials</span>
             <div className="justify-col">
-              <MakeLink url={urls.urls.discord} text={"Discord Server!"}/>
+              <MakeLink url={urls.urls.discord} text={"Discord Server"}/>
               <MakeLink url={urls.urls.simplyFellasGithub} text={"GitHub Repo"}/>
             </div>
           </div>

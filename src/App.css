@@ -127,6 +127,12 @@ footer {
 .sec-c-2 {
     color: var(--sec-color-2);
 }
+.acc-c-1{
+    color: var(--accent-color-1);
+}
+.acc-c-2{
+    color: var(--accent-color-2);
+}
 
 .text-bolder {
     font-weight: bolder;
@@ -141,6 +147,9 @@ footer {
 
 .footerLinkHeader{
     color: var(--accent-color-1);
+    display: block;
+
+    margin-block: .25rem;
 }
 
 .footerLink{
@@ -230,7 +239,6 @@ footer {
         h3,
         h4,
         h5 {
-            color: var(--pri-color-1);
             margin: 0;
             padding: 0;
         }
@@ -327,9 +335,23 @@ footer {
         }
     }
 
+    #footerContent{
+        max-width: 768px;
+    }
+
     #headingNav {
         & ul {
             display: flex;
+
+            & li{
+                & a{
+                    &:hover{
+                        & .navLink_icon{
+                            background-color: var(--accent-color-1);
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -349,6 +371,10 @@ footer {
         & section {
             height: 720px;
             width: 50%;
+
+            & #heroLinkWrapper{
+                height: 96px;
+            }
         }
 
         & #leftSide {
