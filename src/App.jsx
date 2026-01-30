@@ -60,10 +60,6 @@ function App() {
       <section id="about"></section>
 
       <footer id="footerContent">
-        <section className="justify-row">
-          <img src={"/assets/SimplyFellasLogo.svg"}></img>
-          <span className="pri-c-1">SimplyFellas</span>
-        </section>
         <section id="footerLinks">
           <div>
             <span className="footerLinkHeader">Downloads</span>
@@ -87,8 +83,6 @@ function App() {
           </div>
         </section>
       </footer>
-
-      <div id="goBackBar"></div>
     </>
   );
 }

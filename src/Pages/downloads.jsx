@@ -1,4 +1,4 @@
-import NavHeader from "../components/navHeader";
+import NavHeader from "../components/navHeader.jsx";
 
 export default function Downloads() {
   return (

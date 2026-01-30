@@ -6,7 +6,7 @@
     --sec-color-2: #f5f5f5;
 
     --accent-color-1:  #32f1ff;
-    --accent-color-2:  #00d8e7;
+    --accent-color-2:  #00ffe7;
 
     --font-poppins: "Poppins", sans-serif;
     --font-inter: "Inter", sans-serif;
@@ -24,6 +24,8 @@ html {
 }
 
 header {
+    margin-block: 16px;
+
     height: 48px;
 
     display: flex;
@@ -32,9 +34,13 @@ header {
     justify-content: space-between;
     color: var(--pri-color-1);
 
+    border: 1px solid var(--pri-color-1);
+
+    background-color: var(--sec-color-1);
+
     /*background: linear-gradient(var(--sec-color-1), var(--sec-color-2));*/
 
-    background: linear-gradient(to top, transparent, #121212ff);
+    /*background: linear-gradient(to top, transparent, #121212ff);*/
 
     /*filter: drop-shadow(0 -0.1rem 0.05rem var(--pri-color-1));*/
 
@@ -56,6 +62,14 @@ a {
 body {
     padding: 0px;
     margin: 0;
+
+    background:
+        radial-gradient(#121212aa, #080808ff),
+        url("/assets/websiteImages/NetherFortress.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 footer {
@@ -70,13 +84,7 @@ footer {
 /* --- CLASS --- */
 
 .background-hero {
-    background:
-        radial-gradient(#121212aa, #080808ff),
-        url("/assets/websiteImages/NetherFortress.png");
 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 .justify-row {
@@ -167,7 +175,17 @@ footer {
 #footerContent {
     gap: 16px;
     margin-inline: auto;
+    margin-block: 0px;
     max-width: var(--cutoffSize);
+
+
+    border-bottom: 0px;
+    border-top: 1px;
+    border-inline: 1px;
+    border-color: var(--pri-color-1);
+    border-style: solid;
+
+    padding-block: 32px;
 
     & img {
         height: 32px;
@@ -184,13 +202,6 @@ footer {
         justify-content: space-evenly;
         width: 100%;
     }
-}
-
-#goBackBar {
-    height: 64px;
-    position: sticky;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent, #121212ff);
 }
 
 #stickyNavWrapper {
@@ -339,6 +350,12 @@ footer {
 /* tablet screen */
 @media screen and (min-width: 768px) {
 
+    header{
+        width: 1080px;
+        margin-inline: auto;
+    }
+
+
     .buttonHover1{
         border: 0px solid transparent;
         transition: border .25s;
@@ -349,10 +366,15 @@ footer {
     }
 
     #footerContent{
-        max-width: 768px;
+        max-width: 1080px;
+        margin-inline: auto;
+        gap: 16px;
+        padding-inline: 8px;
     }
 
     #headingNav {
+
+
         & ul {
             display: flex;
 
@@ -399,12 +421,13 @@ footer {
             margin-block: 0;
         }
     }
+
 }
 
 @media screen and (min-width: 960px){
     #heroContent{
 
-        max-width: 1080px;
+        max-width: 1280px;
         margin-inline: auto ;
 
         & rightSide{
