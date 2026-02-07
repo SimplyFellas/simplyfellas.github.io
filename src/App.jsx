@@ -3,6 +3,7 @@ import NavHeader from "./components/navHeader";
 import { Link } from "react-router";
 import ".//App.css";
 import urls from ".//jsons/url_links.json"
+import { arrow_svg } from "./components/graphics";
 
 function App() {
 
@@ -16,14 +17,14 @@ function App() {
     <>
       <NavHeader />
 
-      <motion.main id="heroContent">
-        {/* left side*/}
-        <section id="leftSide">
+      {/* hero section*/}
+      <motion.main id="heroWrapper">
+        <section id="hero">
           <h1 className="acc-c-1">SimplyFellas</h1>
-          <p>
+          <motion.p initial={{ scale: 1, transition: { ease: "backOut", duration: 1} }} whileHover={{ scale: 1.3, transition: { ease: "anticipate", duration: .5}}}>
             A vanilla+ modpack crafted to enhance the Minecraft you already know
             & love!
-          </p>
+          </motion.p>
 
           <div className="justify-row" id="heroLinkWrapper">
 
@@ -32,7 +33,7 @@ function App() {
               id="downloadButton"
               className="buttonShape gradient1-toRight buttonHover1"
             >
-              <img src="/assets/arrow.svg"></img>
+              {arrow_svg}
               <span className="sec-c-1">Download!</span>
             </Link>
 
@@ -42,16 +43,10 @@ function App() {
               target="_blank"
               className="buttonShape gradient1-toRight buttonHover1"
             >
-              <img src="/assets/arrow.svg" className="rot-225"></img>
-              <span className="sec-c-1">Need a Server?</span>
+              {arrow_svg}
+              <motion.span className="sec-c-1">Need a Server?</motion.span>
             </a>
           </div>
-
-        </section>
-
-        {/* right side*/}
-        <section id="rightSide">
-          <img src="/assets/simplyFellas_1080.png"></img>
         </section>
       </motion.main>
 
@@ -59,10 +54,10 @@ function App() {
 
       <section id="about"></section>
 
-      <footer id="footerContent">
+      <footer id="footerWrapper">
         <section id="footerLinks">
           <div>
-            <span className="footerLinkHeader">Downloads</span>
+            <span className="footerLinkHeader">Play</span>
             <div className="justify-col">
               <Link to={"/downloads"} className="link-size-1">Downloads</Link>
             </div>
@@ -81,6 +76,10 @@ function App() {
               <MakeLink url={urls.urls.simplyFellasGithub} text={"GitHub Repo"}/>
             </div>
           </div>
+        </section>
+
+        <section id="legal_disclaimer">
+          <i>SimplyFellas is not associated with Mojang / Minecraft</i>
         </section>
       </footer>
     </>

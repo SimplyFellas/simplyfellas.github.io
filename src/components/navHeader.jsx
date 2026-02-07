@@ -4,25 +4,32 @@ import {
   itemAnimation,
 } from "../variables/motionVariables";
 import { Link } from "react-router";
+import { arrow_svg, discord_svg, faq_svg, github_svg, logo_svg } from "./graphics";
+import Hambor from "./navDropdown";
 
 export default function NavHeader({ disabledButton }) {
   return (
     <motion.div id="stickyNavWrapper">
       <motion.header>
+
+        {/* logo area*/}
         <motion.div
           className="justify-row"
           variants={containerAnimation}
           initial="hide"
           animate="show"
         >
-          <motion.img
+          <motion.div
             id="modpackLogo"
             variants={itemAnimation}
-            src="/assets/SimplyFellasLogo.svg"
-          />
+          >{logo_svg}</motion.div>
           <motion.span variants={itemAnimation}>SimplyFellas</motion.span>
         </motion.div>
 
+        {/* phone only nav section*/}
+        <Hambor/>
+
+        {/* tablet and desktop size nav*/}
         <motion.nav id="headingNav">
           <motion.ul
             variants={containerAnimation}
@@ -32,28 +39,28 @@ export default function NavHeader({ disabledButton }) {
 
             <motion.li variants={itemAnimation} aria-disabled>
               <Link to={"/Downloads"}>
-                <img className="navLink_icon" src="/assets/arrow.svg"></img>
+                {arrow_svg}
                 <span>Download</span>
               </Link>
             </motion.li>
 
             <motion.li variants={itemAnimation}>
               <a href="https://github.com/SimplyFellas/SimplyFellasWiki" target="blank">
-                <img className="navLink_icon" src="/assets/faq.svg"></img>
+                {faq_svg}
                 <span>FAQ</span>
               </a>
             </motion.li>
 
             <motion.li variants={itemAnimation}>
               <a href="https://discord.gg/kycqpz8z4q" target="_blank">
-                <img className="navLink_icon" src="/assets/discord.svg"></img>
+                {discord_svg}
                 <span>Discord</span>
               </a>
             </motion.li>
 
             <motion.li variants={itemAnimation}>
               <a href="https://github.com/SimplyFellas" target="_blank">
-                <img className="navLink_icon" src="/assets/github.svg"></img>
+                {github_svg}
                 <span>Github</span>
               </a>
             </motion.li>

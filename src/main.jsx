@@ -11,7 +11,7 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route index element={<App />}></Route>
-        <Route path="/downloads" element={<Downloads />}></Route>
+        <Route path="/downloads" element={<Downloads/>}></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>,
