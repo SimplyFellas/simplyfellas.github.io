@@ -65,7 +65,7 @@ function App() {
           <div>
             <span className="footerLinkHeader">Resources</span>
             <div className="justify-col">
-              <MakeLink url={urls.urls.simplyFellasWiki} text={"Github Wiki"}/>
+              <MakeLink url={urls.urls.simplyFellasWiki} text={"Wiki"}/>
             </div>
 
           </div>
@@ -79,7 +79,7 @@ function App() {
         </section>
 
         <section id="legal_disclaimer">
-          <i>SimplyFellas is not associated with Mojang / Minecraft</i>
+          <i>SimplyFellas does not own Minecraft and is not associated with Mojang / Microsoft</i>
         </section>
       </footer>
     </>

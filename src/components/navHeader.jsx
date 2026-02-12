@@ -1,17 +1,45 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import {
   containerAnimation,
   itemAnimation,
 } from "../variables/motionVariables";
 import { Link } from "react-router";
 import { arrow_svg, discord_svg, faq_svg, github_svg, logo_svg } from "./graphics";
-import Hambor from "./navDropdown";
+import urls from "../jsons/url_links.json"
+import { NavContents } from "./navContents";
+import { useState } from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
 
-export default function NavHeader({ disabledButton }) {
+export default function NavHeader() {
+
+  let [navOpened, setNavOpened] = useState(false)
+
+  function Hambor() {
+
+    return (
+      // button to trigger the dropdown
+      <>
+        <AnimatePresence>
+          {
+            navOpened &&
+            <motion.nav
+                key={0}
+                id="phone_nav"
+                initial={{ opacity: 0, scaleY: 0, backdropFilter: "blur(0px)" }}
+                animate={{ opacity: 1, scaleY: "100%", backdropFilter: "blur(8px)" }}
+                exit={{ opacity: 0, scaleY: 0, backdropFilter: "blur(0px)" }}>
+              <NavContents />
+            </motion.nav>
+          }
+        </AnimatePresence>
+      </>
+    )
+  }
+
   return (
     <motion.div id="stickyNavWrapper">
       <motion.header>
-
         {/* logo area*/}
         <motion.div
           className="justify-row"
@@ -26,48 +54,25 @@ export default function NavHeader({ disabledButton }) {
           <motion.span variants={itemAnimation}>SimplyFellas</motion.span>
         </motion.div>
 
-        {/* phone only nav section*/}
-        <Hambor/>
+        <motion.button
+          id="navButton"
+          onClick={() => { setNavOpened(!navOpened); }}
+          variants={itemAnimation}
+          initial="hide"
+          animate="show"
+
+          whileTap={{scale: .9}}
+        >
+        </motion.button>
 
         {/* tablet and desktop size nav*/}
-        <motion.nav id="headingNav">
-          <motion.ul
-            variants={containerAnimation}
-            initial="hide"
-            animate="show"
-          >
-
-            <motion.li variants={itemAnimation} aria-disabled>
-              <Link to={"/Downloads"}>
-                {arrow_svg}
-                <span>Download</span>
-              </Link>
-            </motion.li>
-
-            <motion.li variants={itemAnimation}>
-              <a href="https://github.com/SimplyFellas/SimplyFellasWiki" target="blank">
-                {faq_svg}
-                <span>FAQ</span>
-              </a>
-            </motion.li>
-
-            <motion.li variants={itemAnimation}>
-              <a href="https://discord.gg/kycqpz8z4q" target="_blank">
-                {discord_svg}
-                <span>Discord</span>
-              </a>
-            </motion.li>
-
-            <motion.li variants={itemAnimation}>
-              <a href="https://github.com/SimplyFellas" target="_blank">
-                {github_svg}
-                <span>Github</span>
-              </a>
-            </motion.li>
-
-          </motion.ul>
+        <motion.nav id="tablet_nav">
+          <NavContents/>
         </motion.nav>
       </motion.header>
+
+      {/* phone only nav section*/}
+      <Hambor />
     </motion.div>
   );
 }

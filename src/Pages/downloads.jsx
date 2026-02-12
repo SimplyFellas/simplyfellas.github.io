@@ -1,3 +1,4 @@
+import "../App.css";
 import NavHeader from "../components/navHeader.jsx";
 
 export default function Downloads() {

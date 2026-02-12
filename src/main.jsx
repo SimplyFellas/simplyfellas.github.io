@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router";
 import { Route } from "react-router";
 import { Routes } from "react-router";
-import Downloads from "src/pages/downloads.jsx";
+import Downloads from "./pages/downloads.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

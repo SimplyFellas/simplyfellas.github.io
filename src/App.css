@@ -166,6 +166,7 @@ footer {
     width: 48px;
     background-color: var(--accent-color-1);
     border-radius: 1rem;
+    border: 0px solid transparent;
 
     padding: 0;
 
@@ -213,8 +214,6 @@ footer {
 
 #wabbanodeLink {
 
-    margin: 8px;
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -246,12 +245,13 @@ footer {
 }
 
 #heroWrapper {
-    padding: 8px;
 
     & #hero{
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        margin-block: 32px;
     }
 
     & h1 {
@@ -261,11 +261,11 @@ footer {
 
 #modpackLogo {
     margin-block: auto;
-    height: 32px;
+    height: 48px;
 
     & svg{
-        height: 32px;
-        width: 32px;
+        height: 48px;
+        width: 48px;
     }
 
     & svg > path {
@@ -273,43 +273,83 @@ footer {
     }
 }
 
-#headingNav {
+#navDisabled{
     display: none;
+}
+
+#phone_nav {
+
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 72px;
+    margin-block: auto;
+    width: 90vw;
+    max-width: 360px;
+    height: fit-content;
+
+    background: rgba(255, 255, 255, .25);
+    border: 1px solid rgba(127, 127, 127, .25);
+    box-shadow: 0 2px .25rem rgba(127, 127, 127, .5);
+    border-radius: 1rem;
 
     & ul {
+        padding: 32px;
         margin: 0;
-        display: none;
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
         gap: 8px;
 
         list-style: none;
 
         font-family: var(--font-poppins);
-
         & li {
+            padding-block: 8px;
+
+            &:hover{
+                background-color: var(--accent-color-1);
+                border: 0px solid transparent;
+                border-radius: 1rem;
+            }
             & a {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                justify-content: center;
+                gap: 8px;
 
                 & span{
                     font-size: .75rem;
+                    color: var(--pri-color-1);
+                    font-weight: bold;
                 }
-                & .navLink_icon{
-                    --IconSize: 12px;
-                    padding-inline: 8px;
-                    width: var(--IconSize);
-                    height: var(--IconSize);
+
+                & svg{
+                    width: 24px;
+                    height: 24px;
+                }
+                & svg > path{
+                    fill: var(--pri-color-1);
                 }
             }
         }
     }
 }
 
+#tablet_nav{
+    display: none;
+}
+
 #legal_disclaimer{
+    max-width: 256px;
+
     & i{
-        font-size: .75rem;
+        font-size: .6rem;
     }
+}
+
+#navDropdown{
+
 }
 
 /* wrappers */
@@ -352,7 +392,12 @@ footer {
         display: none;
     }
 
-    #headingNav {
+    #phone_nav {
+        display: none;
+
+    }
+
+    #tablet_nav{
         display: flex;
 
         & ul {
