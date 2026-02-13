@@ -26,9 +26,9 @@ export default function NavHeader() {
             <motion.nav
                 key={0}
                 id="phone_nav"
-                initial={{ opacity: 0, scaleY: 0, backdropFilter: "blur(0px)" }}
-                animate={{ opacity: 1, scaleY: "100%", backdropFilter: "blur(8px)" }}
-                exit={{ opacity: 0, scaleY: 0, backdropFilter: "blur(0px)" }}>
+                initial={{ opacity: 0, scaleY: 0}}
+                animate={{ opacity: 1, scaleY: "100%"}}
+                exit={{ opacity: 0, scaleY: 0 }}>
               <NavContents />
             </motion.nav>
           }

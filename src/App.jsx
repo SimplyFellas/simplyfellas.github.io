@@ -58,23 +58,16 @@ function App() {
         <section id="footerLinks">
           <div>
             <span className="footerLinkHeader">Play</span>
-            <div className="justify-col">
-              <Link to={"/downloads"} className="link-size-1">Downloads</Link>
-            </div>
+            <Link to={"/downloads"} className="link-size-1">Downloads</Link>
           </div>
           <div>
             <span className="footerLinkHeader">Resources</span>
-            <div className="justify-col">
-              <MakeLink url={urls.urls.simplyFellasWiki} text={"Wiki"}/>
-            </div>
-
+            <MakeLink url={urls.urls.simplyFellasWiki} text={"Wiki"}/>
           </div>
           <div>
             <span className="footerLinkHeader">Socials</span>
-            <div className="justify-col">
-              <MakeLink url={urls.urls.discord} text={"Discord Server"}/>
-              <MakeLink url={urls.urls.simplyFellasGithub} text={"GitHub Repo"}/>
-            </div>
+            <MakeLink url={urls.urls.discord} text={"Discord Server"}/>
+            <MakeLink url={urls.urls.simplyFellasGithub} text={"GitHub Repo"}/>
           </div>
         </section>
 
