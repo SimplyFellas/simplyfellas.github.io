@@ -5,14 +5,40 @@ import ".//App.css";
 import urls from ".//jsons/url_links.json"
 import { arrow_svg } from "./components/graphics";
 
+
+function MakeLink({ url, text }) {
+  return (
+    <a href={url} target="_blank" className="link-size-1">{text}</a>
+  )
+}
+
+export function Foot() {
+  return (
+    <footer id="footerWrapper">
+      <section id="footerLinks">
+        <div>
+          <span className="footerLinkHeader">Play</span>
+          <Link to={"/downloads"} className="link-size-1">Downloads</Link>
+        </div>
+        <div>
+          <span className="footerLinkHeader">Resources</span>
+          <MakeLink url={urls.urls.simplyFellasWiki} text={"Wiki"}/>
+        </div>
+        <div>
+          <span className="footerLinkHeader">Socials</span>
+          <MakeLink url={urls.urls.discord} text={"Discord Server"}/>
+          <MakeLink url={urls.urls.simplyFellasGithub} text={"GitHub Repo"}/>
+        </div>
+      </section>
+
+      <section id="legal_disclaimer">
+        <i>SimplyFellas does not own Minecraft and is not associated with Mojang / Microsoft</i>
+      </section>
+    </footer>
+  )
+}
+
 function App() {
-
-  function MakeLink({ url, text }) {
-    return (
-      <a href={url} target="_blank" className="link-size-1">{text}</a>
-    )
-  }
-
   return (
     <>
       <NavHeader />
@@ -54,27 +80,7 @@ function App() {
 
       <section id="about"></section>
 
-      <footer id="footerWrapper">
-        <section id="footerLinks">
-          <div>
-            <span className="footerLinkHeader">Play</span>
-            <Link to={"/downloads"} className="link-size-1">Downloads</Link>
-          </div>
-          <div>
-            <span className="footerLinkHeader">Resources</span>
-            <MakeLink url={urls.urls.simplyFellasWiki} text={"Wiki"}/>
-          </div>
-          <div>
-            <span className="footerLinkHeader">Socials</span>
-            <MakeLink url={urls.urls.discord} text={"Discord Server"}/>
-            <MakeLink url={urls.urls.simplyFellasGithub} text={"GitHub Repo"}/>
-          </div>
-        </section>
-
-        <section id="legal_disclaimer">
-          <i>SimplyFellas does not own Minecraft and is not associated with Mojang / Microsoft</i>
-        </section>
-      </footer>
+      <Foot />
     </>
   );
 }

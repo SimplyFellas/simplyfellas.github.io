@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import "../App.css";
 import NavHeader from "../components/navHeader.jsx";
 
 export default function Downloads() {
+  useEffect(() => {
+    window.scrollTo({top:0, left: 0, behavior:"smooth"})
+  },[])
+
   return (
     <>
       <NavHeader></NavHeader>

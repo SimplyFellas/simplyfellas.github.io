@@ -31,7 +31,12 @@ header {
     justify-content: space-between;
     color: var(--pri-color-1);
 
-    border: 1px solid rgba(127, 127, 127, .5);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: rgba(127, 127, 127, .5);
 
     background-color: rgba(255,255,255, .25);
 
@@ -160,9 +165,6 @@ footer {
 
 }
 
-
-
-
 #stickyNavWrapper {
     top: 16px;
     position: sticky;
@@ -221,12 +223,14 @@ footer {
 }
 
 #modpackLogo {
+    --logo_size: 40px;
+
     margin-block: auto;
-    height: 48px;
+    height: var(--logo_size);
 
     & svg{
-        height: 48px;
-        width: 48px;
+        height: var(--logo_size);
+        width: var(--logo_size);
     }
 
     & svg > path {
@@ -412,18 +416,24 @@ footer {
         & ul {
             display: flex;
             gap: 16px;
+
+            list-style: none;
+            padding: 0;
         }
 
-        & ul > li > a{
+        & ul li a{
             gap: 4px;
+            display: flex;
         }
 
-        & ul > li > a > svg{
+        & ul li a svg{
             width: 16px;
             height: 16px;
+
+            margin-block: auto;
         }
 
-        & ul > li > a > svg > path{
+        & ul li a svg path{
             fill: var(--pri-color-1);
         }
     }
@@ -482,6 +492,19 @@ footer {
             font-weight: 1000;
         }
     }
+
+    #footerWrapper{
+
+        & #footerLinks{
+            flex-direction: row;
+            justify-content: center;
+            gap: 64px;
+            align-items: start;
+        }
+    }
+
+
+
 }
 
 @media screen and (min-width: 960px){
