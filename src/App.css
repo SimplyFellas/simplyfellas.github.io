@@ -23,7 +23,7 @@ html {
 }
 
 header {
-    height: 48px;
+    height: 32px;
 
     display: flex;
     flex-direction: row;
@@ -31,9 +31,9 @@ header {
     justify-content: space-between;
     color: var(--pri-color-1);
 
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
     border-bottom: 2px;
     border-style: solid;
     border-color: rgba(127, 127, 127, .5);
@@ -155,10 +155,10 @@ footer {
 /* --- ID --- */
 
 #navButton{
-    height: 48px;
-    width: 48px;
+    height: 32px;
+    aspect-ratio: 1/1;
     background-color: var(--accent-color-1);
-    border-radius: 1rem;
+    border-radius: .5rem;
     border: 0px solid transparent;
 
     padding: 0;
@@ -223,7 +223,7 @@ footer {
 }
 
 #modpackLogo {
-    --logo_size: 40px;
+    --logo_size: 32px;
 
     margin-block: auto;
     height: var(--logo_size);

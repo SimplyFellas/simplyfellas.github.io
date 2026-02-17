@@ -16,28 +16,28 @@ export function NavContents() {
         <motion.li variants={itemAnimation} whileTap={{scale:.9}}>
           <Link to={"/Downloads"}>
             {arrow_svg}
-            <span>Download</span>
+            <span className="link-size-1">Download</span>
           </Link>
         </motion.li>
 
         <motion.li variants={itemAnimation} whileTap={{scale:.9}}>
           <a href={urls.urls.simplyFellasWiki} target="blank">
             {faq_svg}
-            <span>FAQ</span>
+            <span className="link-size-1">FAQ</span>
           </a>
         </motion.li>
 
         <motion.li variants={itemAnimation} whileTap={{scale:.9}}>
           <a href={urls.urls.discord} target="_blank">
             {discord_svg}
-            <span>Discord</span>
+            <span className="link-size-1">Discord</span>
           </a>
         </motion.li>
 
         <motion.li variants={itemAnimation} whileTap={{scale:.9}}>
           <a href={urls.urls.simplyFellasGithub} target="_blank">
             {github_svg}
-            <span>Github</span>
+            <span className="link-size-1">Github</span>
           </a>
         </motion.li>
       </motion.ul>
