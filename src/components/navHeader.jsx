@@ -3,13 +3,9 @@ import {
   containerAnimation,
   itemAnimation,
 } from "../variables/motionVariables";
-import { Link } from "react-router";
 import { arrow_svg, discord_svg, faq_svg, github_svg, logo_svg } from "./graphics";
-import urls from "../jsons/url_links.json"
 import { NavContents } from "./navContents";
 import { useState } from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
 
 export default function NavHeader() {
 

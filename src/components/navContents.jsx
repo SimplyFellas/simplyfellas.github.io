@@ -4,7 +4,7 @@ import { containerAnimation, itemAnimation } from "../variables/motionVariables"
 import { arrow_svg, discord_svg, faq_svg, github_svg } from "./graphics";
 import { Link } from "react-router";
 
-import urls from "../jsons/url_links.json"
+import urls from "../variables/url_links.json"
 
 export function NavContents() {
   return (

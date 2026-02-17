@@ -2,7 +2,7 @@ import { motion, spring, stagger } from "motion/react";
 import NavHeader from "./components/navHeader";
 import { Link } from "react-router";
 import ".//App.css";
-import urls from ".//jsons/url_links.json"
+import urls from ".//variables/url_links.json"
 import { arrow_svg } from "./components/graphics";
 
 
