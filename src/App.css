@@ -22,6 +22,11 @@ html {
     background-repeat: no-repeat;
 }
 
+hr{
+    border-color: black;
+    width: auto;
+}
+
 header {
     height: 32px;
 
@@ -73,6 +78,20 @@ footer {
 
 .background-hero {
 
+}
+
+.hrefLink{
+ color: var(--accent-color-1);
+
+ &::before{
+     content: " ";
+     height: 24px;
+     width: 24px;
+     border-radius: 50%;
+     border: 0px solid transparent;
+     background-image: url("/assets/arrow.svg");
+     background-size: cover;
+ }
 }
 
 .justify-row {
@@ -152,10 +171,28 @@ footer {
     font-size: 1rem;
 }
 
+.mBlock8px{
+    margin-block: 8px;
+}
+.mBlock16px{
+    margin-block: 16px;
+}
+.mBlock32px{
+    margin-block: 32px;
+}
+
 /* --- ID --- */
 
+#discordEmbed{
+    width: 100%;
+}
+
+#navDisabled{
+    display: none;
+}
+
 #navButton{
-    height: 32px;
+    height: 40px;
     aspect-ratio: 1/1;
     background-color: var(--accent-color-1);
     border-radius: .5rem;
@@ -238,8 +275,33 @@ footer {
     }
 }
 
-#navDisabled{
-    display: none;
+#modShowcase{
+    padding: 16px;
+
+    background-image: url("/assets/websiteImages/DesertTemple.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & h2{
+        text-align: center;
+    }
+}
+
+#about{
+
+    & section{
+        min-height: 720px;
+
+        padding: 16px;
+    }
+
+    & section:nth-last-of-type(odd){
+        background-color: var(--accent-color-1);
+
+        & .hrefLink{
+            color: var(--sec-color-1);
+        }
+    }
 }
 
 #phone_nav {
@@ -354,7 +416,7 @@ footer {
     }
 
     & #legal_disclaimer{
-        max-width: 256px;
+        max-width: 360px;
         text-align: center;
 
         & i{
@@ -383,20 +445,12 @@ footer {
         margin-block: 0px;
     }
 
-
-    .buttonHover1{
-        border: 0px solid transparent;
-        transition: border .25s;
-
-        &:hover{
-            border: 4px solid var(--pri-color-1);
-        }
-    }
-
     #footerWrapper{
-        margin-inline: auto;
-        gap: 16px;
-        padding-inline: 8px;
+
+        & footer{
+            max-width: 1280px;
+            margin-inline: auto;
+        }
 
         & #footerLinks{
             flex-direction: row;

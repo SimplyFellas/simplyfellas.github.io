@@ -24,8 +24,9 @@ export default function NavHeader() {
                 id="phone_nav"
                 initial={{ opacity: 0, scaleY: 0}}
                 animate={{ opacity: 1, scaleY: "100%"}}
-                exit={{ opacity: 0, scaleY: 0 }}>
-              <NavContents />
+                exit={{ opacity: 0, scaleY: 0 }}
+              >
+                <NavContents />
             </motion.nav>
           }
         </AnimatePresence>

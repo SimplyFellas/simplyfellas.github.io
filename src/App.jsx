@@ -14,7 +14,7 @@ function MakeLink({ url, text }) {
 
 export function Foot() {
   return (
-    <footer id="footerWrapper">
+    <footer>
       <section id="footerLinks">
         <div>
           <span className="footerLinkHeader">Play</span>
@@ -31,8 +31,10 @@ export function Foot() {
         </div>
       </section>
 
+      <hr></hr>
+
       <section id="legal_disclaimer">
-        <i>SimplyFellas does not own Minecraft and is not associated with Mojang / Microsoft</i>
+        <i>SimplyFellas is not associated with Mojang / Microsoft</i>
       </section>
     </footer>
   )
@@ -57,7 +59,7 @@ function App() {
             <Link
               to={"/downloads"}
               id="downloadButton"
-              className="buttonShape gradient1-toRight buttonHover1"
+              className="buttonShape gradient1-toRight"
             >
               {arrow_svg}
               <span className="sec-c-1">Download!</span>
@@ -67,7 +69,7 @@ function App() {
               id="wabbanodeLink"
               href="https://wabbanode.com/affiliate/simplyfellas"
               target="_blank"
-              className="buttonShape gradient1-toRight buttonHover1"
+              className="buttonShape gradient1-toRight"
             >
               {arrow_svg}
               <motion.span className="sec-c-1">Need a Server?</motion.span>
@@ -76,11 +78,44 @@ function App() {
         </section>
       </motion.main>
 
-      <section id="modShowcase"></section>
+      <section id="modShowcase">
+        <h2>Start your adventure with <strong>150+</strong> curated mods!</h2>
+      </section>
 
-      <section id="about"></section>
+      <section id="about">
 
-      <Foot />
+        <section>
+          <h3>Automate your world with <a className="hrefLink" href={urls.urls.createMod}>Create!</a></h3>
+        </section>
+
+        <section>
+          <h3>Find hidden treastures with <a className="hrefLink" href={urls.urls.moogStructuresMod}>Moog's Structures!</a></h3>
+        </section>
+
+        <section>
+          <h3>Adopt your very own tiny, furry <a className="hrefLink" href={urls.urls.adorableHamstersMod}>Adorable Hamsters!</a></h3>
+        </section>
+
+        <section>
+          <h3>Never run out of storage with <a className="hrefLink" href={urls.urls.sophisticatedStorageMod}>Sophisticated Storage!</a></h3>
+        </section>
+
+        <section>
+          <h3>Do a little trolling with <a className="hrefLink" href={urls.urls.carryOnMod}>Carry On!</a></h3>
+        </section>
+
+      </section>
+
+      <section className="mBlock16px">
+        <h2>All of this and more! when you play SimplyFellas</h2>
+        <h4>Download today!</h4>
+      </section>
+
+      <iframe id="discordEmbed" src="https://discord.com/widget?id=1452128644221767733&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+      <div id="footerWrapper">
+        <Foot />
+      </div>
     </>
   );
 }
