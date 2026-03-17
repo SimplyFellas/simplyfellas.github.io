@@ -3,35 +3,41 @@ import {
   containerAnimation,
   itemAnimation,
 } from "../variables/motionVariables";
-import { arrow_svg, discord_svg, faq_svg, github_svg, logo_svg } from "./graphics";
+import {
+  arrow_svg,
+  discord_svg,
+  faq_svg,
+  github_svg,
+  logo_svg,
+} from "./graphics";
 import { NavContents } from "./navContents";
 import { useState } from "react";
 
 export default function NavHeader() {
-
-  let [navOpened, setNavOpened] = useState(false)
+  let [navOpened, setNavOpened] = useState(false);
 
   function Hambor() {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        setNavOpened(false);
+      }
+    });
+
+
 
     return (
       // button to trigger the dropdown
-      <>
-        <AnimatePresence>
-          {
-            navOpened &&
-            <motion.nav
-                key={0}
-                id="phone_nav"
-                initial={{ opacity: 0, scaleY: 0}}
-                animate={{ opacity: 1, scaleY: "100%"}}
-                exit={{ opacity: 0, scaleY: 0 }}
-              >
-                <NavContents />
-            </motion.nav>
-          }
-        </AnimatePresence>
-      </>
-    )
+      <motion.nav
+        key={0}
+        id="phone_nav"
+        initial={{ opacity: 0, y: -32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "linear" }}
+        exit={{ opacity: 0, y: -32 }}
+      >
+        <NavContents />
+      </motion.nav>
+    );
   }
 
   return (
@@ -44,32 +50,36 @@ export default function NavHeader() {
           initial="hide"
           animate="show"
         >
-          <motion.div
-            id="modpackLogo"
-            variants={itemAnimation}
-          >{logo_svg}</motion.div>
+          <motion.div id="modpackLogo" variants={itemAnimation}>
+            {logo_svg}
+          </motion.div>
           <motion.span variants={itemAnimation}>SimplyFellas</motion.span>
         </motion.div>
 
         <motion.button
           id="navButton"
-          onClick={() => { setNavOpened(!navOpened); }}
+          onClick={() => {
+            setNavOpened(!navOpened);
+          }}
           variants={itemAnimation}
           initial="hide"
           animate="show"
-
-          whileTap={{scale: .9}}
+          whileTap={{ scale: 0.9 }}
         >
+          <span>MENU</span>
         </motion.button>
 
         {/* tablet and desktop size nav*/}
         <motion.nav id="tablet_nav">
-          <NavContents/>
+          <NavContents />
         </motion.nav>
       </motion.header>
 
       {/* phone only nav section*/}
-      <Hambor />
+      {/* make sure the animate pres is in the parent element*/}
+      <AnimatePresence>
+        {navOpened && <Hambor />}
+      </AnimatePresence>
     </motion.div>
   );
 }
