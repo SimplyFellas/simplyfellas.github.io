@@ -1,9 +1,10 @@
 import { motion, spring, stagger } from "motion/react";
 import NavHeader from "./components/navHeader";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import ".//App.css";
 import urls from ".//variables/url_links.json";
 import { arrow_svg } from "./components/graphics";
+import { containerAnimation, itemAnimation } from "./variables/motionVariables";
 
 function MakeLink({ url, text }) {
   return (
@@ -48,86 +49,144 @@ function App() {
     <>
       <NavHeader />
 
-        <motion.main id="heroWrapper">
-          {/* hero section*/}
-          <section id="hero">
-            <h1 id="heroTitle">SimplyFellas</h1>
-            <motion.p id="heroDesc">
-              A vanilla+ modpack crafted to enhance the Minecraft you already
-              know & love!
-            </motion.p>
+      <motion.main id="heroWrapper">
+        {/* hero section*/}
+        <motion.section
+          id="hero"
+          variants={containerAnimation}
+          initial="hide"
+          whileInView="show"
 
-            <div className="justify-row" id="heroLinkWrapper">
+          viewport={{once:true}}
+        >
+          <motion.h1 id="heroTitle" variants={itemAnimation}>
+            SimplyFellas
+          </motion.h1>
+          <motion.p id="heroDesc" variants={itemAnimation}>
+            A vanilla+ modpack crafted to enhance the Minecraft you already know
+            & love!
+          </motion.p>
+
+          <motion.div
+            className="justify-row"
+            id="heroLinkWrapper"
+            variants={containerAnimation}
+            initial="hide"
+            whileInView="show"
+
+            viewport={{once:true}}
+          >
+            <motion.span variants={itemAnimation}>
               <Link to={"/downloads"} className="linkButtons">
-                {arrow_svg}
-                <span className="sec-c-1 mb-auto">Download!</span>
+              {arrow_svg}
+              <span className="sec-c-1 mb-auto">Download!</span>
               </Link>
+            </motion.span>
 
-              <a
-                href="https://wabbanode.com/affiliate/simplyfellas"
-                target="_blank"
-                className="linkButtons"
-              >
-                {arrow_svg}
-                <motion.span className="sec-c-1 mb-auto">
-                  Need a Server?
-                </motion.span>
-              </a>
-            </div>
-          </section>
-        </motion.main>
+            <motion.a
+              href="https://wabbanode.com/affiliate/simplyfellas"
+              target="_blank"
+              className="linkButtons"
+              id="wabbanode"
+              variants={itemAnimation}
+            >
+              {arrow_svg}
+              <motion.span className="sec-c-1 mb-auto">
+                Need a Server?
+              </motion.span>
+            </motion.a>
+          </motion.div>
+        </motion.section>
+      </motion.main>
 
-      <section id="modShowcase">
+      <motion.section id="modShowcase"
+        variants={containerAnimation}
+        initial="hide"
+        whileInView="show"
+
+        viewport={{once:true}}
+      >
         <h2>
-          With <strong>150+</strong> mods, you'll always experience something new!
+          With <strong>150+</strong> mods, you'll always experience something
+          new!
         </h2>
-      </section>
+      </motion.section>
 
       <section id="about">
-        <section>
+        <motion.section
+          variants={containerAnimation}
+          initial="hide"
+          whileInView="show"
+
+          viewport={{once:true}}
+        >
           <h3>
             Automate your world with{" "}
             <a className="hrefLink" href={urls.urls.createMod}>
               Create!
             </a>
           </h3>
-        </section>
+        </motion.section>
 
-        <section>
+        <motion.section
+          variants={containerAnimation}
+          initial="hide"
+          whileInView="show"
+
+          viewport={{once:true}}
+        >
           <h3>
             Find hidden treastures with{" "}
             <a className="hrefLink" href={urls.urls.moogStructuresMod}>
               Moog's Structures!
             </a>
           </h3>
-        </section>
+        </motion.section>
 
-        <section>
+        <motion.section
+          variants={containerAnimation}
+          initial="hide"
+          whileInView="show"
+
+          viewport={{once:true}}
+        >
           <h3>
             Adopt your very own tiny, furry{" "}
             <a className="hrefLink" href={urls.urls.adorableHamstersMod}>
               Adorable Hamsters!
             </a>
           </h3>
-        </section>
+        </motion.section>
 
-        <section>
+        <motion.section
+          variants={containerAnimation}
+          initial="hide"
+          whileInView="show"
+
+          viewport={{once:true}}
+        >
           <h3>
             Never run out of storage with{" "}
             <a className="hrefLink" href={urls.urls.sophisticatedStorageMod}>
               Sophisticated Storage!
             </a>
           </h3>
-        </section>
+        </motion.section>
 
-        <section>
+        <motion.section
+          variants={containerAnimation}
+          initial="hide"
+          whileInView="show"
+
+          viewport={{once:true}}
+        >
           <h3>
             Do a little trolling with{" "}
             <a className="hrefLink" href={urls.urls.carryOnMod}>
               Carry On!
             </a>
           </h3>
-        </section>
+        </motion.section>
       </section>
 
       <section className="mBlock16px">

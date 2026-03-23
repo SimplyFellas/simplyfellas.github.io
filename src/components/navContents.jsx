@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 import { containerAnimation, itemAnimation } from "../variables/motionVariables";
 import { arrow_svg, discord_svg, faq_svg, github_svg } from "./graphics";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 import urls from "../variables/url_links.json"
 
@@ -14,7 +14,7 @@ export function NavContents() {
         animate="show"
       >
         <motion.li variants={itemAnimation} whileTap={{scale:.9}}>
-          <Link to={"/Downloads"}>
+          <Link to={"/downloads"}>
             {arrow_svg}
             <span className="link-size-1">Download</span>
           </Link>

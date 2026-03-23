@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, stagger } from "motion/react";
 import {
   containerAnimation,
   itemAnimation,
@@ -23,17 +23,15 @@ export default function NavHeader() {
       }
     });
 
-
-
     return (
       // button to trigger the dropdown
       <motion.nav
         key={0}
         id="phone_nav"
-        initial={{ opacity: 0, y: -32 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "linear" }}
-        exit={{ opacity: 0, y: -32 }}
+        initial={{ opacity: 0, y: -32}}
+        animate={{ opacity: 1, y: 0}}
+        transition={{ type: "tween" }}
+        exit={{ opacity: 0, y: -32}}
       >
         <NavContents />
       </motion.nav>
@@ -41,16 +39,23 @@ export default function NavHeader() {
   }
 
   return (
-    <motion.div id="stickyNavWrapper">
+    <motion.div
+      id="stickyNavWrapper"
+      initial={{ y: "-100%" }}
+      animate={{ y: "0" }}
+      transition={{ type: "spring", duration: 3 }}
+    >
       <motion.header>
-        {/* logo area*/}
+
+
+
         <motion.div
           className="justify-row"
           variants={containerAnimation}
           initial="hide"
           animate="show"
         >
-          <motion.div id="modpackLogo" variants={itemAnimation}>
+          <motion.div id="modpackLogo" variants={containerAnimation}>
             {logo_svg}
           </motion.div>
           <motion.span variants={itemAnimation}>SimplyFellas</motion.span>
@@ -77,9 +82,7 @@ export default function NavHeader() {
 
       {/* phone only nav section*/}
       {/* make sure the animate pres is in the parent element*/}
-      <AnimatePresence>
-        {navOpened && <Hambor />}
-      </AnimatePresence>
+      <AnimatePresence>{navOpened && <Hambor />}</AnimatePresence>
     </motion.div>
   );
 }

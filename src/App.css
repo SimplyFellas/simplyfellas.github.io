@@ -178,6 +178,13 @@ footer {
 
 /* --- ID --- */
 
+#wabbanode{
+    & svg{
+        transform: rotate(-135deg);
+        z-index: 0;
+    }
+}
+
 #discordEmbed {
     width: 90%;
     margin-inline: auto;
@@ -192,6 +199,55 @@ footer {
     position: fixed;
 
     width: 100vw;
+
+    transition: top 1s;
+
+    z-index: 5;
+
+    @media screen and (min-width: 768px){
+        & header{
+            & #tablet_nav {
+                display: flex;
+
+                & ul {
+                    display: flex;
+                    gap: 16px;
+
+                    list-style: none;
+                    padding: 0;
+                }
+
+                & ul li a {
+                    gap: 4px;
+                    display: flex;
+                }
+
+                & ul li a svg {
+                    width: 16px;
+                    height: 16px;
+
+                    margin-block: auto;
+                }
+
+                & ul li a svg path {
+                    fill: var(--sec-color-1);
+                }
+            }
+        }
+
+        #navButton {
+            display: none;
+        }
+
+        #phone_nav {
+            display: none;
+        }
+
+    }
+
+    & #tablet_nav {
+            display: none;
+    }
 
     & #modpackLogo {
         --logo_size: 32px;
@@ -223,10 +279,9 @@ footer {
             font-size: 0.75rem;
             color: var(--sec-color-1);
 
-            &:hover{
+            &:hover {
                 text-decoration: underline var(--accent-color-1) 2px;
             }
-
         }
     }
 
@@ -312,9 +367,9 @@ footer {
     flex-direction: column;
     justify-content: center;
 
-    font-size: 2rem;
-
     animation: bgPos 60s infinite linear;
+
+    font-size: 2rem;
 
     & #hero {
         display: flex;
@@ -322,7 +377,33 @@ footer {
         align-items: center;
 
         @media screen and (min-width: 540px) {
-            font-size: 4rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            height: 768px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 3rem;
+            & #heroTitle {
+                font-size: 10rem;
+                color: transparent;
+                background: linear-gradient(
+                    to bottom,
+                    var(--accent-color-1),
+                    var(--accent-color-2)
+                );
+                background-clip: text;
+                background-size: contain;
+            }
+
+            & #heroDesc {
+                font-size: inherit;
+                font-weight: 1000;
+                margin: 0;
+                max-width: 768px;
+                text-align: center;
+            }
         }
 
         & #heroTitle {
@@ -352,15 +433,21 @@ footer {
         text-align: center;
         font-weight: normal;
 
-        & strong{
+        & strong {
             font-size: 2rem;
             color: transparent;
-            -webkit-text-stroke: .2px var(--sec-color-1);
+            -webkit-text-stroke: 1px var(--sec-color-1);
         }
     }
 
     @media screen and (min-width: 768px) {
-        background-color: red;
+        & h2 {
+            font-size: 3rem;
+
+            & strong {
+                font-size: 5rem;
+            }
+        }
     }
 }
 
@@ -378,10 +465,6 @@ footer {
             color: var(--sec-color-1);
         }
     }
-}
-
-#tablet_nav {
-    display: none;
 }
 
 #navDropdown {
@@ -470,74 +553,9 @@ footer {
         }
     }
 
-    #navButton {
-        display: none;
-    }
-
-    #phone_nav {
-        display: none;
-    }
-
-    #tablet_nav {
-        display: flex;
-
-        & ul {
-            display: flex;
-            gap: 16px;
-
-            list-style: none;
-            padding: 0;
-        }
-
-        & ul li a {
-            gap: 4px;
-            display: flex;
-        }
-
-        & ul li a svg {
-            width: 16px;
-            height: 16px;
-
-            margin-block: auto;
-        }
-
-        & ul li a svg path {
-            fill: var(--sec-color-1);
-        }
-    }
 
     #heroLinkWrapper {
         margin-block: 32px;
-    }
-
-    #hero {
-        height: 768px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        & h1 {
-            font-size: 8rem;
-
-            color: transparent;
-            background: linear-gradient(
-                to bottom,
-                var(--accent-color-1),
-                var(--accent-color-2)
-            );
-            background-clip: text;
-            background-size: contain;
-        }
-
-        & p {
-            margin: 0;
-
-            max-width: 768px;
-            text-align: center;
-
-            font-size: 2rem;
-            font-weight: 1000;
-        }
     }
 }
 
