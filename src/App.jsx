@@ -3,12 +3,12 @@ import NavHeader from "./components/navHeader";
 import { Link } from "react-router-dom";
 import "./App.css";
 import urls from "./variables/url_links.json";
-import { arrow_svg } from "./components/graphics";
-import { containerAnimation, itemAnimation } from "./variables/motionVariables";
+import { arrow_svg, logo_svg } from "./components/graphics";
+import { containerAnimation, itemAnimation, sectionsAnimation } from "./variables/motionVariables";
 
 function MakeLink({ url, text }) {
   return (
-    <a href={url} target="_blank" className="link-size-1">
+    <a href={url} target="_blank" className="footer_link">
       {text}
     </a>
   );
@@ -17,10 +17,18 @@ function MakeLink({ url, text }) {
 export function Foot() {
   return (
     <footer>
-      <section id="footerLinks">
+      <div className="row">
+        <button onClick={() => {
+          window.scrollTo({top: 0, behavior: "smooth"})
+        }} className="noButtonStyle">
+          {logo_svg}
+        </button>
+
+
+        <section id="footerLinks">
         <div>
           <span className="footerLinkHeader">Play</span>
-          <Link to={"/downloads"} className="link-size-1">
+          <Link to={"/downloads"} className="footer_link">
             Downloads
           </Link>
         </div>
@@ -33,7 +41,8 @@ export function Foot() {
           <span className="footerLinkHeader">Socials</span>
           <MakeLink url={urls.urls.discord} text={"Discord Server"} />
         </div>
-      </section>
+        </section>
+      </div>
 
       <hr></hr>
 
@@ -114,7 +123,7 @@ function App() {
 
       <section id="about">
         <motion.section
-          variants={containerAnimation}
+          variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
 
@@ -129,7 +138,7 @@ function App() {
         </motion.section>
 
         <motion.section
-          variants={containerAnimation}
+          variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
 
@@ -144,14 +153,14 @@ function App() {
         </motion.section>
 
         <motion.section
-          variants={containerAnimation}
+          variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
 
           viewport={{once:true}}
         >
           <h3>
-            Adopt your very own tiny, furry{" "}
+            Adopt your very own tiny{" "}
             <a className="hrefLink" href={urls.urls.adorableHamstersMod}>
               Adorable Hamsters!
             </a>
@@ -159,14 +168,14 @@ function App() {
         </motion.section>
 
         <motion.section
-          variants={containerAnimation}
+          variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
 
           viewport={{once:true}}
         >
           <h3>
-            Never run out of storage with{" "}
+            Too many chests? try{" "}
             <a className="hrefLink" href={urls.urls.sophisticatedStorageMod}>
               Sophisticated Storage!
             </a>
@@ -174,7 +183,7 @@ function App() {
         </motion.section>
 
         <motion.section
-          variants={containerAnimation}
+          variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
 
@@ -189,20 +198,24 @@ function App() {
         </motion.section>
       </section>
 
-      <section className="mBlock16px">
-        <h2>All of this and more! when you play SimplyFellas</h2>
-        <h4>Download today!</h4>
+      <section id="cta">
+        <div>
+          <h2>All of this and more! when you play SimplyFellas</h2>
+          <Link to={"/downloads"} className="linkButtons">Download today!</Link>
+        </div>
+
+        <iframe
+          id="discordEmbed"
+          src="https://discord.com/widget?id=1452128644221767733&theme=dark"
+          width="350"
+          height="500"
+          allowtransparency="true"
+          frameborder="0"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        ></iframe>
       </section>
 
-      <iframe
-        id="discordEmbed"
-        src="https://discord.com/widget?id=1452128644221767733&theme=dark"
-        width="350"
-        height="500"
-        allowtransparency="true"
-        frameborder="0"
-        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-      ></iframe>
+
 
       <div id="footerWrapper">
         <Foot />

@@ -13,30 +13,30 @@ import {
 import { NavContents } from "./navContents";
 import { useState } from "react";
 
+function Hambor({navState}) {
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      navState(false);
+    }
+  });
+
+  return (
+    // button to trigger the dropdown
+    <motion.nav
+      key={0}
+      id="phone_nav"
+      initial={{ opacity: 0, y: -32}}
+      animate={{ opacity: 1, y: 0}}
+      transition={{ type: "tween" }}
+      exit={{ opacity: 0, y: -32}}
+    >
+      <NavContents />
+    </motion.nav>
+  );
+}
+
 export default function NavHeader() {
   let [navOpened, setNavOpened] = useState(false);
-
-  function Hambor() {
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
-        setNavOpened(false);
-      }
-    });
-
-    return (
-      // button to trigger the dropdown
-      <motion.nav
-        key={0}
-        id="phone_nav"
-        initial={{ opacity: 0, y: -32}}
-        animate={{ opacity: 1, y: 0}}
-        transition={{ type: "tween" }}
-        exit={{ opacity: 0, y: -32}}
-      >
-        <NavContents />
-      </motion.nav>
-    );
-  }
 
   return (
     <motion.div
@@ -46,8 +46,6 @@ export default function NavHeader() {
       transition={{ type: "spring", duration: 3 }}
     >
       <motion.header>
-
-
 
         <motion.div
           className="justify-row"
@@ -82,7 +80,7 @@ export default function NavHeader() {
 
       {/* phone only nav section*/}
       {/* make sure the animate pres is in the parent element*/}
-      <AnimatePresence>{navOpened && <Hambor />}</AnimatePresence>
+      <AnimatePresence>{navOpened && <Hambor navState={setNavOpened} />}</AnimatePresence>
     </motion.div>
   );
 }
