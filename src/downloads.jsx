@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import "../App.css";
-import NavHeader from "../components/navHeader.jsx";
+import "./App.css";
+import NavHeader from "./components/navHeader.jsx";
+import { Foot } from "./App.jsx";
 
 export default function Downloads() {
   useEffect(() => {
