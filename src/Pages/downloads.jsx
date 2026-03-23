@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "../App.css";
 import NavHeader from "../components/navHeader.jsx";
 
-function Downloads() {
+export default function Downloads() {
   useEffect(() => {
     window.scrollTo({top:0, left: 0, behavior:"smooth"})
   },[])
@@ -14,8 +14,8 @@ function Downloads() {
       <main id="wrapper_downloads">
         <h1 className="pri-c-1">This is the download page</h1>
       </main>
+
+      <Foot></Foot>
     </>
   );
 }
-
-export default Downloads
