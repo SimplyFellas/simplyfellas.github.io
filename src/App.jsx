@@ -1,8 +1,8 @@
 import { motion, spring, stagger } from "motion/react";
 import NavHeader from "./components/navHeader";
 import { Link } from "react-router-dom";
-import ".//App.css";
-import urls from ".//variables/url_links.json";
+import "./App.css";
+import urls from "./variables/url_links.json";
 import { arrow_svg } from "./components/graphics";
 import { containerAnimation, itemAnimation } from "./variables/motionVariables";
 
