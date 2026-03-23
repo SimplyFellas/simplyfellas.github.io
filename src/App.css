@@ -455,19 +455,19 @@ footer {
 
 
     & section:nth-of-type(1){
-        background-image: url("assets/websiteImages/CreateAutomation.png");
+        background-image: url("/assets/websiteImages/CreateAutomation.png");
     }
     & section:nth-of-type(2){
-        background-image: url("assets/websiteImages/JungleTemple.png");
+        background-image: url("/assets/websiteImages/JungleTemple.png");
     }
     & section:nth-of-type(3){
-        background-image: url("assets/websiteImages/Cave.png");
+        background-image: url("/assets/websiteImages/Cave.png");
     }
     & section:nth-of-type(4){
-        background-image: url("assets/websiteImages/Dungeon.png");
+        background-image: url("/assets/websiteImages/Dungeon.png");
     }
     & section:nth-of-type(5){
-        background-image: url("assets/websiteImages/IceCave.png");
+        background-image: url("/assets/websiteImages/IceCave.png");
     }
 
 
