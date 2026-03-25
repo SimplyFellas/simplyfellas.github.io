@@ -12,6 +12,7 @@ import {
 } from "./graphics";
 import { NavContents } from "./navContents";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Hambor({navState}) {
   window.addEventListener("resize", () => {
@@ -53,10 +54,17 @@ export default function NavHeader() {
           initial="hide"
           animate="show"
         >
+
           <motion.div id="modpackLogo" variants={containerAnimation}>
             {logo_svg}
           </motion.div>
-          <motion.span variants={itemAnimation}>SimplyFellas</motion.span>
+
+          <motion.span id="nav-title" variants={itemAnimation}>
+            <Link to={"/"}>
+              SimplyFellas
+            </Link>
+          </motion.span>
+
         </motion.div>
 
         <motion.button

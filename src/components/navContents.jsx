@@ -23,7 +23,7 @@ export function NavContents() {
         <motion.li variants={itemAnimation} whileTap={{scale:.9}}>
           <a href={urls.urls.simplyFellasWiki} target="blank">
             {faq_svg}
-            <span className="link-size-1">FAQ</span>
+            <span className="link-size-1">Wiki</span>
           </a>
         </motion.li>
 

@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import urls from "./variables/url_links.json";
 import { arrow_svg, logo_svg } from "./components/graphics";
-import { containerAnimation, itemAnimation, sectionsAnimation } from "./variables/motionVariables";
+import {
+  containerAnimation,
+  itemAnimation,
+  sectionsAnimation,
+} from "./variables/motionVariables";
 
 function MakeLink({ url, text }) {
   return (
@@ -16,40 +20,47 @@ function MakeLink({ url, text }) {
 
 export function Foot() {
   return (
-    <footer>
-      <div className="row">
-        <button onClick={() => {
-          window.scrollTo({top: 0, behavior: "smooth"})
-        }} className="noButtonStyle">
-          {logo_svg}
-        </button>
+    <div id="footerWrapper">
+      <footer>
+        <div className="row">
+          <button
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="noButtonStyle"
+          >
+            {logo_svg}
+          </button>
 
+          <section id="footerLinks">
+            <div>
+              <span className="footerLinkHeader">Play</span>
+              <Link to={"/downloads"} className="footer_link">
+                Downloads
+              </Link>
+            </div>
+            <div>
+              <span className="footerLinkHeader">Resources</span>
+              <MakeLink url={urls.urls.simplyFellasWiki} text={"Wiki"} />
+              <MakeLink
+                url={urls.urls.simplyFellasGithub}
+                text={"GitHub Repo"}
+              />
+            </div>
+            <div>
+              <span className="footerLinkHeader">Socials</span>
+              <MakeLink url={urls.urls.discord} text={"Discord Server"} />
+            </div>
+          </section>
+        </div>
 
-        <section id="footerLinks">
-        <div>
-          <span className="footerLinkHeader">Play</span>
-          <Link to={"/downloads"} className="footer_link">
-            Downloads
-          </Link>
-        </div>
-        <div>
-          <span className="footerLinkHeader">Resources</span>
-          <MakeLink url={urls.urls.simplyFellasWiki} text={"Wiki"} />
-          <MakeLink url={urls.urls.simplyFellasGithub} text={"GitHub Repo"} />
-        </div>
-        <div>
-          <span className="footerLinkHeader">Socials</span>
-          <MakeLink url={urls.urls.discord} text={"Discord Server"} />
-        </div>
+        <hr></hr>
+
+        <section id="legal_disclaimer">
+          <i>SimplyFellas is not associated with Mojang / Microsoft</i>
         </section>
-      </div>
-
-      <hr></hr>
-
-      <section id="legal_disclaimer">
-        <i>SimplyFellas is not associated with Mojang / Microsoft</i>
-      </section>
-    </footer>
+      </footer>
+    </div>
   );
 }
 
@@ -65,8 +76,7 @@ function App() {
           variants={containerAnimation}
           initial="hide"
           whileInView="show"
-
-          viewport={{once:true}}
+          viewport={{ once: true }}
         >
           <motion.h1 id="heroTitle" variants={itemAnimation}>
             SimplyFellas
@@ -82,13 +92,12 @@ function App() {
             variants={containerAnimation}
             initial="hide"
             whileInView="show"
-
-            viewport={{once:true}}
+            viewport={{ once: true }}
           >
             <motion.span variants={itemAnimation}>
               <Link to={"/downloads"} className="linkButtons">
-              {arrow_svg}
-              <span className="sec-c-1 mb-auto">Download!</span>
+                {arrow_svg}
+                <span className="sec-c-1 mb-auto">Download!</span>
               </Link>
             </motion.span>
 
@@ -108,12 +117,12 @@ function App() {
         </motion.section>
       </motion.main>
 
-      <motion.section id="modShowcase"
+      <motion.section
+        id="modShowcase"
         variants={containerAnimation}
         initial="hide"
         whileInView="show"
-
-        viewport={{once:true}}
+        viewport={{ once: true }}
       >
         <h2>
           With <strong>150+</strong> mods, you'll always experience something
@@ -126,8 +135,7 @@ function App() {
           variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
-
-          viewport={{once:true}}
+          viewport={{ once: true }}
         >
           <h3>
             Automate your world with{" "}
@@ -141,8 +149,7 @@ function App() {
           variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
-
-          viewport={{once:true}}
+          viewport={{ once: true }}
         >
           <h3>
             Find hidden treastures with{" "}
@@ -156,8 +163,7 @@ function App() {
           variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
-
-          viewport={{once:true}}
+          viewport={{ once: true }}
         >
           <h3>
             Adopt your very own tiny{" "}
@@ -171,8 +177,7 @@ function App() {
           variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
-
-          viewport={{once:true}}
+          viewport={{ once: true }}
         >
           <h3>
             Too many chests? try{" "}
@@ -186,8 +191,7 @@ function App() {
           variants={sectionsAnimation}
           initial="hide"
           whileInView="show"
-
-          viewport={{once:true}}
+          viewport={{ once: true }}
         >
           <h3>
             Do a little trolling with{" "}
@@ -201,7 +205,9 @@ function App() {
       <section id="cta">
         <div>
           <h2>All of this and more! when you play SimplyFellas</h2>
-          <Link to={"/downloads"} className="linkButtons">Download today!</Link>
+          <Link to={"/downloads"} className="linkButtons">
+            Download today!
+          </Link>
         </div>
 
         <iframe
@@ -215,11 +221,7 @@ function App() {
         ></iframe>
       </section>
 
-
-
-      <div id="footerWrapper">
-        <Foot />
-      </div>
+      <Foot />
     </>
   );
 }
